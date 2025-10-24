@@ -6,6 +6,7 @@
 //
 // This file defines the main navigation structure of the app using SwiftUI's NavigationStack.
 // It includes a dynamic navigation path and multiple destination views.
+//
 
 import SwiftUI
 
