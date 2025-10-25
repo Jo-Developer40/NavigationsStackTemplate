@@ -10,6 +10,7 @@
 
 import SwiftUI
 
+
 // Enum representing the different views in the app.
 // Each case corresponds to a specific destination in the navigation stack.
 enum AppView: Hashable {
