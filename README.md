@@ -10,11 +10,7 @@ This project demonstrates the use of SwiftUI's `NavigationStack` to create a dyn
 - **Toolbar Integration**: Adds navigation buttons to the toolbar for seamless navigation.
 - **Environment Awareness**: Detects the current color scheme (light/dark mode) using `@Environment`.
 
-![Demo GIF](NavigationsStackTemplate/Docs/Resources/gif.gif)
-
-![Ansicht](Resources/foto.png)
-
-<img src="gif.gif" alt="Bildbeschreibung" width="100" height="500">
+<img src="gif.gif" alt="AppView" width="200" height="1000">
 
 ## Code Structure
 
@@ -72,7 +68,7 @@ Provides a preview of the `ContentView` for development purposes.
 
 ## Requirements
 
-- **Xcode**: Version 14 or later.
+- **Xcode**: Version 16.0 or later.
 - **Swift**: Version 5.7 or later.
 - **macOS**: Version 12.0 or later.
 
