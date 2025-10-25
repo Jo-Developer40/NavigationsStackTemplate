@@ -14,7 +14,7 @@ This project demonstrates the use of SwiftUI's `NavigationStack` to create a dyn
 
 ![Ansicht](Resources/foto.png)
 
-<img src="gif.gif" alt="Bildbeschreibung" width="500" height="100">
+<img src="gif.gif" alt="Bildbeschreibung" width="100" height="500">
 
 ## Code Structure
 
