@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3877BEA42EAD445200C7C50C /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 3877BEA32EAD445200C7C50C /* LICENSE.md */; };
 		38A7FC052EABCD6800BD2C08 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 38A7FC042EABCD6800BD2C08 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3877BEA32EAD445200C7C50C /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		38A7FBD32EAB7ED900BD2C08 /* NavigationsStackTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationsStackTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A7FBE12EAB7EDB00BD2C08 /* NavigationsStackTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationsStackTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A7FBEB2EAB7EDB00BD2C08 /* NavigationsStackTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationsStackTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 				38A7FBEE2EAB7EDB00BD2C08 /* NavigationsStackTemplateUITests */,
 				38A7FBD42EAB7ED900BD2C08 /* Products */,
 				38A7FC042EABCD6800BD2C08 /* README.md */,
+				3877BEA32EAD445200C7C50C /* LICENSE.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3877BEA42EAD445200C7C50C /* LICENSE.md in Resources */,
 				38A7FC052EABCD6800BD2C08 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
