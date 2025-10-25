@@ -1,18 +1,13 @@
+// Swift
 //
 // NavigationsStackTemplate
 // ContentView.swift
 //
 // Created by Juergen Schulz 24.10.2025
 //
-// This file defines the main navigation structure of the app using SwiftUI's NavigationStack.
-// It includes a dynamic navigation path and multiple destination views.
-//
 
 import SwiftUI
 
-
-// Enum representing the different views in the app.
-// Each case corresponds to a specific destination in the navigation stack.
 enum AppView: Hashable {
     case page1View
     case page2View
@@ -21,31 +16,30 @@ enum AppView: Hashable {
 }
 
 struct ContentView: View {
-    @Environment(\.colorScheme) var colorScheme // Environment variable to detect the current color scheme (light/dark mode).
-    @State private var path: [AppView] = [] // State variable to manage the navigation path.
+    @Environment(\.colorScheme) var colorScheme
+    @State private var path: [AppView] = []
     
     var body: some View {
-        // NavigationStack manages the navigation hierarchy.
         NavigationStack(path: $path) {
             ZStack {
                 VStack(spacing: 45) {
-                    Text("Your code for this page")  // Placeholder
+                    Text("Your code for this page")
                         .font(.largeTitle.bold())
-                        .foregroundStyle(.blue)
+                        .foregroundColor(.blue)
                 }
                 .padding()
             }
-            .navigationTitle("ContentView") // Title for the main view.
-            .navigationBarTitleDisplayMode(.inline) // Display the title inline.
-            .toolbar { // Toolbar with navigation buttons.
+            .navigationTitle("ContentView")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationButton(path: $path, title: "Page 1", icon: "chevron.right", destination: .page1View)
+                    NavButton(path: $path, title: "Page 1", icon: "chevron.right", destination: .page1View)
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationButton(path: $path, icon: "gearshape", destination: .settings)
+                    NavButton(path: $path, icon: "gearshape", destination: .settings)
                 }
             }
-            .navigationDestination(for: AppView.self) { view in // Define destinations for the navigation stack.
+            .navigationDestination(for: AppView.self) { view in
                 switch view {
                 case .page1View:
                     Page1View_(path: $path)
@@ -61,85 +55,81 @@ struct ContentView: View {
     }
 }
 
-/// A reusable button component for navigation.
-/// It appends the specified destination to the navigation path when tapped.
-struct NavigationButton: View {
-    @Binding var path: [AppView] // Binding to the navigation path.
-    
-    var title: String? = nil // Optional title for the button.
-    var icon: String // Icon name for the button.
-    var destination: AppView // Destination to navigate to.
+struct NavButton: View {
+    @Binding var path: [AppView]
+    var title: String? = nil
+    var icon: String
+    var destination: AppView
 
     var body: some View {
         Button {
-            path.append(destination) // Append the destination to the path.
+            path.append(destination)
         } label: {
             HStack {
-                if let title = title { Text(title) } // Display the title if provided.
-                Image(systemName: icon) // Display the icon.
+                if let title = title { Text(title) }
+                Image(systemName: icon)
             }
         }
     }
 }
 
-// View representing the first page in the navigation stack.
 struct Page1View_: View {
-    @Binding var path: [AppView] // Binding to the navigation path.
+    @Binding var path: [AppView]
     
     var body: some View {
         VStack(spacing: 30) {
-            Text("Your code for this page")  // Placeholder
+            Text("Your code for this page")
                 .font(.largeTitle.bold())
-                .foregroundStyle(.gray)
+                .foregroundColor(.gray)
         }
         .padding()
-        .navigationTitle("Page 1") // Title for Page 1.
+        .navigationTitle("Page 1")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationButton(path: $path, title: "Page 2", icon: "chevron.right", destination: .page2View)
+                NavButton(path: $path, title: "Page 2", icon: "chevron.right", destination: .page2View)
             }
         }
     }
 }
 
-// View representing the second page in the navigation stack.
 struct Page2View_: View {
-    @Binding var path: [AppView] // Binding to the navigation path.
+    @Binding var path: [AppView]
     
     var body: some View {
         VStack {
-            Text("Your code for this page")  // Placeholder
+            Text("Your code for this page")
                 .font(.largeTitle.bold())
-                .foregroundStyle(.red)
+                .foregroundColor(.red)
         }
-        .navigationTitle("Page 2") // Title for Page 2.
+        .padding()
+        .navigationTitle("Page 2")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationButton(path: $path, title: "Page 3", icon: "chevron.right", destination: .page3View)
+                NavButton(path: $path, title: "Page 3", icon: "chevron.right", destination: .page3View)
             }
         }
     }
 }
 
-// View representing the third page in the navigation stack.
 struct Page3View_: View {
-    @Binding var path: [AppView] // Binding to the navigation path.
+    @Binding var path: [AppView]
     
     var body: some View {
         VStack {
-            Text("Your code for this page") // Placeholder
+            Text("Your code for this page")
                 .font(.largeTitle.bold())
-                .foregroundStyle(.green)
+                .foregroundColor(.green)
         }
-        .navigationTitle("Page 3") // Title for Page 3.
+        .padding()
+        .navigationTitle("Page 3")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    path.removeAll() // Clear the navigation path to return to the root.
+                    path.removeAll()
                 } label: {
                     HStack {
-                        Text("ContentView")
-                        Image(systemName: "chevron.right")
+                        Text("Home")
+                        Image(systemName: "chevron.left")
                     }
                 }
             }
@@ -147,24 +137,23 @@ struct Page3View_: View {
     }
 }
 
-// View representing the settings page in the navigation stack.
 struct SettingsView_: View {
-    @Binding var path: [AppView] // Binding to the navigation path.
+    @Binding var path: [AppView]
     
     var body: some View {
         VStack {
-            Text("Your code for Settings") // Placeholder text for the Settings page.
+            Text("Your code for Settings")
                 .font(.largeTitle.bold())
-                .foregroundStyle(.orange)
+                .foregroundColor(.orange)
         }
-        .navigationTitle("Settings") // Title for the Settings page.
+        .padding()
+        .navigationTitle("Settings")
         .toolbar {
-            // Optional: Add toolbar items for the Settings page.
+            // optional toolbar items
         }
     }
 }
 
-// Preview provider for ContentView.
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
