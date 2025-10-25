@@ -10,7 +10,7 @@ This project demonstrates the use of SwiftUI's `NavigationStack` to create a dyn
 - **Toolbar Integration**: Adds navigation buttons to the toolbar for seamless navigation.
 - **Environment Awareness**: Detects the current color scheme (light/dark mode) using `@Environment`.
 
-![Demo GIF](Resources/gif.gif)
+![Demo GIF](NavigationsStackTemplate/Docs/Resources/gif.gif)
 
 ![Ansicht](Resources/foto.png)
 
