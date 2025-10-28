@@ -9,8 +9,10 @@ This project demonstrates the use of SwiftUI's `NavigationStack` to create a dyn
 - **Multiple Views**: Implements four distinct views (`Page1View_`, `Page2View_`, `Page3View_`, and `SettingsView_`).
 - **Toolbar Integration**: Adds navigation buttons to the toolbar for seamless navigation.
 - **Environment Awareness**: Detects the current color scheme (light/dark mode) using `@Environment`.
-
-<img src="gif.gif" alt="AppView" width="200" height="1000">
+- 
+<p align="center">
+<img src="gif.gif" alt="AppView" width="300"/>
+</p>
 
 ## Code Structure
 
